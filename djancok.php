@@ -80,12 +80,12 @@ echo color("red","           Time  : ".date('[d-m-Y] [H:i:s]')."   \n");
         echo "\n".color("red"," CLAIM C..");
         echo "\n".color("white"," Please wait");
         for($a=1;$a<=3;$a++){
-        echo color("white",".");
+        echo color("green",".");
         sleep(3);
         }
         $code1 = request('/go-promotions/v1/promotions/enrollments', $token, '{"promo_code":"PESANGOFOOD2206"}');
         $message = fetch_value($code1,'"message":"','"');
-        echo "\n".color("white"," Message: ".$message);
+        echo "\n".color("red"," Message: ".$message);
         echo "\n".color("red"," VOCER D.");
         echo "\n".color("white"," Please wait");
         for($a=1;$a<=3;$a++){

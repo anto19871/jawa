@@ -3,13 +3,13 @@ date_default_timezone_set('Asia/Jakarta');
 include "function.php";
 ulang:
 // function change(){
-echo color("blue","                    ROB JASMINE\n");
-echo color("white","           Time  : ".date('[d-m-Y] [H:i:s]')."   \n");
+echo color("red","                    DJANCOK CREW\n");
 echo color("green","                    Silent is Gold         \n");
-echo color("white","                  Format Kode 62*** \n");
+echo color("white","                  Format Nomor 62*** \n");
+echo color("red","           Time  : ".date('[d-m-Y] [H:i:s]')."   \n");
         $nama = nama();
         $email = str_replace(" ", "", $nama) . mt_rand(100, 999);
-        echo color("white"," NOMOR  : ");
+        echo color("white"," NOMOR LO  : ");
         // $no = trim(fgets(STDIN));
         $nohp = trim(fgets(STDIN));
         $nohp = str_replace("62","62",$nohp);
@@ -48,8 +48,8 @@ echo color("white","                  Format Kode 62*** \n");
         $uuid = getStr('"resource_owner_id":',',',$verif);
         echo color("white","+] Your access token : ".$token."\n\n");
         save("token.txt",$token); 
-        echo color("white","\n▬▬▬▬▬▬▬▬▬▬▬▬CLAIM VOUCHER▬▬▬▬▬▬▬▬▬▬▬▬");
-        echo "\n".color("white","CLAIM A..");
+        echo color("red","\n▬▬▬▬▬▬▬▬▬▬▬▬CLAIM VOUCHER▬▬▬▬▬▬▬▬▬▬▬▬");
+        echo "\n".color("red","CLAIM A..");
         echo "\n".color("white"," Please wait");
         for($a=1;$a<=3;$a++){
         echo color("white",".");
@@ -61,9 +61,9 @@ echo color("white","                  Format Kode 62*** \n");
         echo "\n".color("green","Message: ".$message);
         goto gocar;
         }else{
-        echo "\n".color("white"," Message: ".$message);
+        echo "\n".color("red"," Message: ".$message);
 	gocar:
-        echo "\n".color("white"," CLAIM B.. ");
+        echo "\n".color("red"," CLAIM B.. ");
         echo "\n".color("white"," Please wait");
         for($a=1;$a<=3;$a++){
         echo color("white",".");
@@ -75,9 +75,9 @@ echo color("white","                  Format Kode 62*** \n");
         echo "\n".color("green","Message: ".$message);
         goto gofood;
         }else{
-        echo "\n".color("white"," Message: ".$message);
+        echo "\n".color("red"," Message: ".$message);
         gofood:
-        echo "\n".color("white"," CLAIM C..");
+        echo "\n".color("red"," CLAIM C..");
         echo "\n".color("white"," Please wait");
         for($a=1;$a<=3;$a++){
         echo color("white",".");
@@ -86,7 +86,7 @@ echo color("white","                  Format Kode 62*** \n");
         $code1 = request('/go-promotions/v1/promotions/enrollments', $token, '{"promo_code":"PESANGOFOOD2206"}');
         $message = fetch_value($code1,'"message":"','"');
         echo "\n".color("white"," Message: ".$message);
-        echo "\n".color("white"," VOCER COLI.");
+        echo "\n".color("red"," VOCER D.");
         echo "\n".color("white"," Please wait");
         for($a=1;$a<=3;$a++){
         echo color("white",".");
@@ -95,7 +95,7 @@ echo color("white","                  Format Kode 62*** \n");
         sleep(3);
         $boba09 = request('/go-promotions/v1/promotions/enrollments', $token, '{"promo_code":"PAKEGOFOOD0906"}');
         $messageboba09 = fetch_value($boba09,'"message":"','"');
-        echo "\n".color("white"," Message: ".$messageboba09);
+        echo "\n".color("red"," Message: ".$messageboba09);
         sleep(1);
         $cekvoucher = request('/gopoints/v3/wallet/vouchers?limit=13&page=1', $token);
         $total = fetch_value($cekvoucher,'"total_vouchers":',',');

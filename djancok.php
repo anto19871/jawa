@@ -4,12 +4,12 @@ include "function.php";
 ulang:
 // function change(){
 echo color("red","                    DJANCOK CREW\n");
+echo color("white","           Time  : ".date('[d-m-Y] [H:i:s]')."   \n");
 echo color("green","                    Silent is Gold         \n");
-echo color("white","                  Format Nomor 62*** \n");
-echo color("red","           Time  : ".date('[d-m-Y] [H:i:s]')."   \n");
+echo color("white","                  Format Kode 62*** \n");
         $nama = nama();
         $email = str_replace(" ", "", $nama) . mt_rand(100, 999);
-        echo color("white"," NOMOR LO  : ");
+        echo color("white"," NOMOR  : ");
         // $no = trim(fgets(STDIN));
         $nohp = trim(fgets(STDIN));
         $nohp = str_replace("62","62",$nohp);
@@ -48,8 +48,8 @@ echo color("red","           Time  : ".date('[d-m-Y] [H:i:s]')."   \n");
         $uuid = getStr('"resource_owner_id":',',',$verif);
         echo color("white","+] Your access token : ".$token."\n\n");
         save("token.txt",$token); 
-        echo color("red","\n▬▬▬▬▬▬▬▬▬▬▬▬CLAIM VOUCHER▬▬▬▬▬▬▬▬▬▬▬▬");
-        echo "\n".color("red","CLAIM A..");
+        echo color("white","\n▬▬▬▬▬▬▬▬▬▬▬▬CLAIM VOUCHER▬▬▬▬▬▬▬▬▬▬▬▬");
+        echo "\n".color("white","CLAIM EATLAH..");
         echo "\n".color("white"," Please wait");
         for($a=1;$a<=3;$a++){
         echo color("white",".");
@@ -61,9 +61,9 @@ echo color("red","           Time  : ".date('[d-m-Y] [H:i:s]')."   \n");
         echo "\n".color("green","Message: ".$message);
         goto gocar;
         }else{
-        echo "\n".color("red"," Message: ".$message);
+        echo "\n".color("white"," Message: ".$message);
 	gocar:
-        echo "\n".color("red"," CLAIM B.. ");
+        echo "\n".color("white"," CLAIM 20+10.. ");
         echo "\n".color("white"," Please wait");
         for($a=1;$a<=3;$a++){
         echo color("white",".");
@@ -75,19 +75,28 @@ echo color("red","           Time  : ".date('[d-m-Y] [H:i:s]')."   \n");
         echo "\n".color("green","Message: ".$message);
         goto gofood;
         }else{
-        echo "\n".color("red"," Message: ".$message);
+        echo "\n".color("white"," Message: ".$message);
         gofood:
-        echo "\n".color("red"," CLAIM C..");
+        echo "\n".color("white"," CLAIM 15+10..");
         echo "\n".color("white"," Please wait");
         for($a=1;$a<=3;$a++){
-        echo color("green",".");
+        echo color("white",".");
         sleep(3);
         }
         $code1 = request('/go-promotions/v1/promotions/enrollments', $token, '{"promo_code":"PESANGOFOOD2206"}');
         $message = fetch_value($code1,'"message":"','"');
-        echo "\n".color("red"," Message: ".$message)
+        echo "\n".color("white"," Message: ".$message);
+        echo "\n".color("white"," CLAIM VOCER LAGI.");
+        echo "\n".color("white"," Please wait");
+        for($a=1;$a<=3;$a++){
+        echo color("white",".");
+        sleep(3);
+        }
+        sleep(3);
+        $boba09 = request('/go-promotions/v1/promotions/enrollments', $token, '{"promo_code":"PAKEGOFOOD0906"}');
+        $messageboba09 = fetch_value($boba09,'"message":"','"');
+        echo "\n".color("red"," Message: ".$messageboba09);
         sleep(1);
-        }else{
         $cekvoucher = request('/gopoints/v3/wallet/vouchers?limit=13&page=1', $token);
         $total = fetch_value($cekvoucher,'"total_vouchers":',',');
         $voucher1 = getStr1('"title":"','",',$cekvoucher,"1");
@@ -161,7 +170,7 @@ echo color("red","           Time  : ".date('[d-m-Y] [H:i:s]')."   \n");
          $pilih1 = trim(fgets(STDIN));
          if($pilih1 == "y" || $pilih1 == "Y"){
          //if($pilih1 == "y" && strpos($no, "628")){
-         echo color("white","▬▬▬▬▬▬▬▬▬▬▬▬▬▬ PIN MU = 121212 ▬▬▬▬▬▬▬▬▬▬▬▬")."\n";
+         echo color("white","▬▬▬▬▬▬▬▬▬▬▬▬▬▬ PIN LO = 121212 ▬▬▬▬▬▬▬▬▬▬▬▬")."\n";
          $data2 = '{"pin":"121212"}';
          $getotpsetpin = request("/wallet/pin", $token, $data2, null, null, $uuid);
          echo "Otp pin: ";
@@ -176,13 +185,13 @@ echo color("red","           Time  : ".date('[d-m-Y] [H:i:s]')."   \n");
          }
          }
          }else{
-         echo color("white","-] OTP SALAH");
+         echo color("white","-] OTP SALAH CUK");
          echo"\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n\n";
          echo color("white","!] INPUT ULANG..\n");
          goto otp;
          }
          }else{
-         echo color("white","-] NOMOR SALAH");
+         echo color("white","-] NOMOR UDAH TERDAFTAR CUK");
          echo"\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n\n";
          echo color("white","!] MASUKAN LAGI\n");
          goto ulang;

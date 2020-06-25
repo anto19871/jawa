@@ -86,16 +86,7 @@ echo color("red","           Time  : ".date('[d-m-Y] [H:i:s]')."   \n");
         $code1 = request('/go-promotions/v1/promotions/enrollments', $token, '{"promo_code":"PESANGOFOOD2206"}');
         $message = fetch_value($code1,'"message":"','"');
         echo "\n".color("red"," Message: ".$message);
-        echo "\n".color("red"," VOCER D.");
-        echo "\n".color("white"," Please wait");
-        for($a=1;$a<=3;$a++){
-        echo color("white",".");
-        sleep(3);
         }
-        sleep(3);
-        $boba09 = request('/go-promotions/v1/promotions/enrollments', $token, '{"promo_code":"PAKEGOFOOD0906"}');
-        $messageboba09 = fetch_value($boba09,'"message":"','"');
-        echo "\n".color("red"," Message: ".$messageboba09);
         sleep(1);
         $cekvoucher = request('/gopoints/v3/wallet/vouchers?limit=13&page=1', $token);
         $total = fetch_value($cekvoucher,'"total_vouchers":',',');
